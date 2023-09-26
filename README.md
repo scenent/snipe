@@ -1,6 +1,7 @@
 # snipe
 
-> snipe is a visual novel engine based on OpenGL and C++.
+> snipe is a visual novel engine based on OpenGL and C++.  
+> you can check out the demo project on release page.
 
 ---
 
