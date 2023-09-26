@@ -273,5 +273,5 @@ void myClass::update() {
 
 ---
 
-2023-08-18 ~ 
+2023-08-18 ~  
 MIT Licensed.
