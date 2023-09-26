@@ -1,0 +1,1 @@
+this is modified version of GLFW for Windows build.
