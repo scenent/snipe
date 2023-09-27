@@ -507,7 +507,7 @@ label _on_start_button_pressed
 label _on_load_button_pressed
     command "reset_all"
     # when you use "load" keyword, engine will start to
-    # accelarate process until the story reach to
+    # accelerate process until the story reach to
     # last saved position.
     load "res:\save.txt"
     jump_main "start"
