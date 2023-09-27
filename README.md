@@ -2,7 +2,7 @@
 
 > snipe is a visual novel engine based on OpenGL and C++.  
 > you can check out the demo project on release page.  
-> *please check that you're selected x86 as a target platform before you build on Visual Studio.*
+> *please check that you've selected x86 as a target platform before you build on Visual Studio.*
 
 ---
 
