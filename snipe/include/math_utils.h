@@ -256,7 +256,6 @@ struct rect {
 };
 
 struct polygon {
-	// 시계방향으로 push_back 해주세요
 	std::vector<vec2> vertices{};
 	static bool pointVspolygon(vec2 point, polygon poly) {
 		bool result = false;
