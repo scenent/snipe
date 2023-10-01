@@ -586,8 +586,11 @@ void interpret_script(std::wstring src, bool isMainScope, bool isIfScope, bool i
 		if (is_returned_by_ifstate == true) {
 			if (isIfScope == false && isWhileScope == false) {
 				is_returned_by_ifstate = false;
-				return;
 			}
+			return;
+		}
+		if (is_breaked_by_ifstate) {
+			return;
 		}
 		if (startsWith(src_lines[index], L"    ") || startsWith(src_lines[index], L"#") || src_lines[index] == L"") continue;
 		std::vector<Token> cur_tokens = tokenize(src_lines[index]);
@@ -1180,6 +1183,7 @@ void interpret_script(std::wstring src, bool isMainScope, bool isIfScope, bool i
 			if (t.joinable()) t.join();
 		}
 		else if (cur_tokens[0].type == TokenKind::Break) {
+			if (isCallback == false) currentGlobalIndex += 1;
 			if ((isIfScope == true && isWhileScope == true) ||(isIfScope == false && isWhileScope == true)) {
 				is_breaked_by_ifstate = true;
 				return;
@@ -1187,7 +1191,6 @@ void interpret_script(std::wstring src, bool isMainScope, bool isIfScope, bool i
 			else {
 				alert(L"you misused the break keyword : please use it when you want to break while loop");
 			}
-			if (isCallback == false) currentGlobalIndex += 1;
 		}
 		else if (cur_tokens[0].type == TokenKind::While) {
 			std::wstring condition = L"";
